@@ -6,9 +6,16 @@ import productSingleVase from "../assets/category/p4-singlevas.png";
 import productMedium from "../assets/category/p5-medium.png";
 import productSimple from "../assets/category/p6-simple.png";
 import productLarge from "../assets/category/p7-largegiant.png";
+import serviceMain from "../assets/category/s1-main.png";
+import serviceRakit from "../assets/category/s2-consult.png";
+import serviceDecor from "../assets/category/s3-decor.png";
+import serviceDelivery from "../assets/category/s4-rakit.png";
+import serviceConsult from "../assets/category/s5-custom.png";
+import serviceMaintenance from "../assets/category/s6-kirim.png";
+import serviceCustom from "../assets/category/s7-rawat.png";
+
 import arrow2 from "../assets/icons/arrow2.svg";
 
-//interface item
 interface Item {
   id: number;
   itemImage: string;
@@ -16,7 +23,6 @@ interface Item {
   title: string;
 }
 
-//interface category
 interface CategoryType {
   id: number;
   name: string;
@@ -73,62 +79,55 @@ const Categories: CategoryType[] = [
   {
     id: 2,
     name: "Services",
-    mainImage: productMain,
-    desc: "ini merupakan kategori layanan kami, ganti ke product untuk mengakses produk yang kami miliki.",
+    mainImage: serviceMain,
+    desc: "Ini merupakan kategori layanan kami, ganti ke product untuk mengakses produk yang kami miliki.",
     item: [
       {
         id: 1,
-        itemImage: productWedding,
-        alt: "Services Wedding",
-        title: "Wedding Bouquet",
+        itemImage: serviceConsult,
+        alt: "Konsultasi Desain",
+        title: "Konsultasi Desain",
       },
       {
         id: 2,
-        itemImage: productMoney,
-        alt: "Services Money",
-        title: "Money",
+        itemImage: serviceDecor,
+        alt: "Dekorasi Acara",
+        title: "Dekorasi Acara",
       },
       {
         id: 3,
-        itemImage: productSingleVase,
-        alt: "Services Single Vase",
-        title: "Single & Vas",
+        itemImage: serviceRakit,
+        alt: "Rakit Bunga",
+        title: "Rakit Bunga",
       },
       {
         id: 4,
-        itemImage: productMedium,
-        alt: "Services Medium",
-        title: "Medium",
+        itemImage: serviceCustom,
+        alt: "Custom Buket",
+        title: "Custom Buket",
       },
       {
         id: 5,
-        itemImage: productSimple,
-        alt: "Services Simple",
-        title: "Simple",
+        itemImage: serviceDelivery,
+        alt: "Kirim Bunga",
+        title: "Kirim Bunga",
       },
       {
         id: 6,
-        itemImage: productLarge,
-        alt: "Services Large",
-        title: "Large & Giant",
+        itemImage: serviceMaintenance,
+        alt: "Perawatan Bunga",
+        title: "Perawatan Bunga",
       },
     ],
   },
 ];
 
 const Category = () => {
-  const [categoryItems, setCategoryItems] = useState(Categories);
   const [selectedCategory, setSelectedCategory] = useState("Product");
 
-  const categoryMain = categoryItems.find(
+  const categoryMain = Categories.find(
     (category) => category.name === selectedCategory
   );
-
-  const categoryMainDesc = categoryItems.find((category) => {
-    if (category.name === selectedCategory) {
-      return category.desc;
-    }
-  });
 
   const handleCategoryClick = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedCategory(e.target.value);
@@ -152,15 +151,15 @@ const Category = () => {
       <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 auto-rows-[180px]">
         <div className="row-span-2 col-span-2 rounded-2xl overflow-hidden relative flex items-end">
           <img
-            src={productMain}
-            alt=""
+            src={categoryMain?.mainImage}
+            alt={categoryMain?.name}
             className="w-full object-cover h-full"
           />
           <div className="backdrop-blur-sm absolute max-w-80 bg-black/10 rounded-2xl px-6 pt-4 pb-8 mb-7 ms-7 space-y-3 border border-gray-300/30">
             <h2 className="font-head font-extrabold text-white text-lg">
               {categoryMain?.name}
             </h2>
-            <p className="text-sm text-white">{categoryMainDesc?.desc}</p>
+            <p className="text-sm text-white">{categoryMain?.desc}</p>
           </div>
           <div className="h-16 w-16 bg-white absolute bottom-0 right-0 rounded-tl-2xl flex items-center justify-center">
             <img
@@ -172,73 +171,73 @@ const Category = () => {
         </div>
         <div className="col-span-2 rounded-2xl overflow-hidden relative flex justify-center items-end">
           <img
-            src={productWedding}
+            src={categoryMain?.item[0].itemImage}
             alt=""
             className="w-full object-cover h-full"
           />
           <div className="backdrop-blur-sm absolute w-11/12 bg-black/10 rounded-2xl px-6 py-2 mb-3 space-y-3 border border-gray-300/30">
             <h2 className="font-head font-extrabold text-white text-lg">
-              Wedding Bouquet
+              {categoryMain?.item[0].title}
             </h2>
           </div>
         </div>
         <div className="rounded-2xl overflow-hidden relative flex justify-center items-end">
           <img
-            src={productMoney}
+            src={categoryMain?.item[1].itemImage}
             alt=""
             className="w-full object-cover h-full"
           />
           <div className="backdrop-blur-sm absolute w-11/12 bg-black/10 rounded-2xl px-6 py-2 mb-3 space-y-3 border border-gray-300/30">
             <h2 className="font-head font-extrabold text-white text-lg text-center">
-              Money
+              {categoryMain?.item[1].title}
             </h2>
           </div>
         </div>
         <div className="rounded-2xl overflow-hidden relative flex justify-center items-end">
           <img
-            src={productSingleVase}
+            src={categoryMain?.item[2].itemImage}
             alt=""
             className="w-full object-cover h-full"
           />
           <div className="backdrop-blur-sm absolute w-11/12 bg-black/10 rounded-2xl px-6 py-2 mb-3 space-y-3 border border-gray-300/30">
             <h2 className="font-head font-extrabold text-white text-lg text-center">
-              Single & Vas
+              {categoryMain?.item[2].title}
             </h2>
           </div>
         </div>
         <div className="rounded-2xl overflow-hidden relative flex justify-center items-end">
           <img
-            src={productMedium}
+            src={categoryMain?.item[3].itemImage}
             alt=""
             className="w-full object-cover h-full"
           />
           <div className="backdrop-blur-sm absolute w-11/12 bg-black/10 rounded-2xl px-6 py-2 mb-3 space-y-3 border border-gray-300/30">
             <h2 className="font-head font-extrabold text-white text-lg text-center">
-              Medium
+              {categoryMain?.item[3].title}
             </h2>
           </div>
         </div>
         <div className="rounded-2xl overflow-hidden relative flex justify-center items-end">
           <img
-            src={productSimple}
+            src={categoryMain?.item[4].itemImage}
             alt=""
             className="w-full object-cover h-full"
           />
           <div className="backdrop-blur-sm absolute w-11/12 bg-black/10 rounded-2xl px-6 py-2 mb-3 space-y-3 border border-gray-300/30">
             <h2 className="font-head font-extrabold text-white text-lg text-center">
-              Simple
+              {categoryMain?.item[4].title}
             </h2>
           </div>
         </div>
         <div className="col-span-2 rounded-2xl overflow-hidden relative flex justify-center items-end">
           <img
-            src={productLarge}
+            src={categoryMain?.item[5].itemImage}
             alt=""
             className="w-full object-cover h-full"
           />
           <div className="backdrop-blur-sm absolute w-11/12 bg-black/10 rounded-2xl px-6 py-2 mb-3 space-y-3 border border-gray-300/30">
             <h2 className="font-head font-extrabold text-white text-lg text-right">
-              Large & Giant
+              {categoryMain?.item[5].title}
             </h2>
           </div>
         </div>
