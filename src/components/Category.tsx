@@ -172,7 +172,7 @@ const Category = () => {
         <div className="col-span-2 rounded-2xl overflow-hidden relative flex justify-center items-end">
           <img
             src={categoryMain?.item[0].itemImage}
-            alt=""
+            alt={categoryMain?.item[0].alt}
             className="w-full object-cover h-full"
           />
           <div className="backdrop-blur-sm absolute w-11/12 bg-black/10 rounded-2xl px-6 py-2 mb-3 space-y-3 border border-gray-300/30">
@@ -184,7 +184,7 @@ const Category = () => {
         <div className="rounded-2xl overflow-hidden relative flex justify-center items-end">
           <img
             src={categoryMain?.item[1].itemImage}
-            alt=""
+            alt={categoryMain?.item[1].alt}
             className="w-full object-cover h-full"
           />
           <div className="backdrop-blur-sm absolute w-11/12 bg-black/10 rounded-2xl px-6 py-2 mb-3 space-y-3 border border-gray-300/30">
@@ -196,7 +196,7 @@ const Category = () => {
         <div className="rounded-2xl overflow-hidden relative flex justify-center items-end">
           <img
             src={categoryMain?.item[2].itemImage}
-            alt=""
+            alt={categoryMain?.item[2].alt}
             className="w-full object-cover h-full"
           />
           <div className="backdrop-blur-sm absolute w-11/12 bg-black/10 rounded-2xl px-6 py-2 mb-3 space-y-3 border border-gray-300/30">
@@ -220,7 +220,7 @@ const Category = () => {
         <div className="rounded-2xl overflow-hidden relative flex justify-center items-end">
           <img
             src={categoryMain?.item[4].itemImage}
-            alt=""
+            alt={categoryMain?.item[4].alt}
             className="w-full object-cover h-full"
           />
           <div className="backdrop-blur-sm absolute w-11/12 bg-black/10 rounded-2xl px-6 py-2 mb-3 space-y-3 border border-gray-300/30">
@@ -232,7 +232,7 @@ const Category = () => {
         <div className="col-span-2 rounded-2xl overflow-hidden relative flex justify-center items-end">
           <img
             src={categoryMain?.item[5].itemImage}
-            alt=""
+            alt={categoryMain?.item[5].alt}
             className="w-full object-cover h-full"
           />
           <div className="backdrop-blur-sm absolute w-11/12 bg-black/10 rounded-2xl px-6 py-2 mb-3 space-y-3 border border-gray-300/30">
