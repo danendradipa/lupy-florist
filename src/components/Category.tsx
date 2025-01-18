@@ -169,78 +169,29 @@ const Category = () => {
             />
           </div>
         </div>
-        <div className="col-span-2 rounded-2xl overflow-hidden relative flex justify-center items-end">
-          <img
-            src={categoryMain?.item[0].itemImage}
-            alt={categoryMain?.item[0].alt}
-            className="w-full object-cover h-full"
-          />
-          <div className="backdrop-blur-sm absolute w-11/12 bg-black/10 rounded-2xl px-6 py-2 mb-3 space-y-3 border border-gray-300/30">
-            <h2 className="font-head font-extrabold text-white text-lg">
-              {categoryMain?.item[0].title}
-            </h2>
-          </div>
-        </div>
-        <div className="rounded-2xl overflow-hidden relative flex justify-center items-end">
-          <img
-            src={categoryMain?.item[1].itemImage}
-            alt={categoryMain?.item[1].alt}
-            className="w-full object-cover h-full"
-          />
-          <div className="backdrop-blur-sm absolute w-11/12 bg-black/10 rounded-2xl px-6 py-2 mb-3 space-y-3 border border-gray-300/30">
-            <h2 className="font-head font-extrabold text-white text-lg text-center">
-              {categoryMain?.item[1].title}
-            </h2>
-          </div>
-        </div>
-        <div className="rounded-2xl overflow-hidden relative flex justify-center items-end">
-          <img
-            src={categoryMain?.item[2].itemImage}
-            alt={categoryMain?.item[2].alt}
-            className="w-full object-cover h-full"
-          />
-          <div className="backdrop-blur-sm absolute w-11/12 bg-black/10 rounded-2xl px-6 py-2 mb-3 space-y-3 border border-gray-300/30">
-            <h2 className="font-head font-extrabold text-white text-lg text-center">
-              {categoryMain?.item[2].title}
-            </h2>
-          </div>
-        </div>
-        <div className="rounded-2xl overflow-hidden relative flex justify-center items-end">
-          <img
-            src={categoryMain?.item[3].itemImage}
-            alt=""
-            className="w-full object-cover h-full"
-          />
-          <div className="backdrop-blur-sm absolute w-11/12 bg-black/10 rounded-2xl px-6 py-2 mb-3 space-y-3 border border-gray-300/30">
-            <h2 className="font-head font-extrabold text-white text-lg text-center">
-              {categoryMain?.item[3].title}
-            </h2>
-          </div>
-        </div>
-        <div className="rounded-2xl overflow-hidden relative flex justify-center items-end">
-          <img
-            src={categoryMain?.item[4].itemImage}
-            alt={categoryMain?.item[4].alt}
-            className="w-full object-cover h-full"
-          />
-          <div className="backdrop-blur-sm absolute w-11/12 bg-black/10 rounded-2xl px-6 py-2 mb-3 space-y-3 border border-gray-300/30">
-            <h2 className="font-head font-extrabold text-white text-lg text-center">
-              {categoryMain?.item[4].title}
-            </h2>
-          </div>
-        </div>
-        <div className="col-span-2 rounded-2xl overflow-hidden relative flex justify-center items-end">
-          <img
-            src={categoryMain?.item[5].itemImage}
-            alt={categoryMain?.item[5].alt}
-            className="w-full object-cover h-full"
-          />
-          <div className="backdrop-blur-sm absolute w-11/12 bg-black/10 rounded-2xl px-6 py-2 mb-3 space-y-3 border border-gray-300/30">
-            <h2 className="font-head font-extrabold text-white text-lg text-right">
-              {categoryMain?.item[5].title}
-            </h2>
-          </div>
-        </div>
+
+        {categoryMain?.item.map((item, index) => {
+          const isLarge = index === 0 || index === 5;
+          const colSpanClass = isLarge ? "col-span-2" : "";
+
+          return (
+            <div
+              key={item.id}
+              className={`rounded-2xl overflow-hidden relative flex justify-center items-end ${colSpanClass}`}
+            >
+              <img
+                src={item.itemImage}
+                alt={item.alt}
+                className="w-full object-cover h-full"
+              />
+              <div className="backdrop-blur-sm absolute w-11/12 bg-black/10 rounded-2xl px-6 py-2 mb-3 space-y-3 border border-gray-300/30">
+                <h2 className="font-head font-extrabold text-white text-lg text-center">
+                  {item.title}
+                </h2>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
