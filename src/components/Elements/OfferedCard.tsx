@@ -1,6 +1,6 @@
 import { OfferedCardType } from "../Offered";
-import heart from "../assets/icons/heart.svg";
-import heartFilled from "../assets/icons/heart-fill.svg";
+import heart from "../../assets/icons/heart.svg";
+import heartFilled from "../../assets/icons/heart-fill.svg";
 
 interface OfferedProps {
   offeredCard: OfferedCardType;
