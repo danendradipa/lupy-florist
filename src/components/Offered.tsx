@@ -9,7 +9,7 @@ import flower from "../assets/products/flower.png";
 import rangkaiSimple from "../assets/rangkai/rangkai-simple.png";
 import rangkaiPremium from "../assets/rangkai/rangkai-premium.png";
 import rangkaiExclusive from "../assets/rangkai/rangkai-exclusive.png";
-import OfferedCard from "./OfferedCard";
+import OfferedCard from "./Elements/OfferedCard";
 
 export interface OfferedCardType {
   id: number;

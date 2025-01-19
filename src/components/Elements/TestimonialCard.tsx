@@ -1,4 +1,4 @@
-import StarRating from "./Elements/StarRating";
+import StarRating from "./StarRating";
 
 interface Testimonial {
   id: number;

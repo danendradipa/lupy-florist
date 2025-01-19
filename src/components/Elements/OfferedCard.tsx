@@ -1,4 +1,4 @@
-import { OfferedCardType } from "./Offered";
+import { OfferedCardType } from "../Offered";
 import heart from "../assets/icons/heart.svg";
 import heartFilled from "../assets/icons/heart-fill.svg";
 
