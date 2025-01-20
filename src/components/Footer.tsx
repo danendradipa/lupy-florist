@@ -1,18 +1,22 @@
 const company = [
   {
     id: 1,
+    link: "#",
     title: "About Us",
   },
   {
     id: 2,
+    link: "#",
     title: "Legal Information",
   },
   {
     id: 3,
+    link: "#",
     title: "Contact Us",
   },
   {
     id: 4,
+    link: "#",
     title: "Blog",
   },
 ];
@@ -20,14 +24,17 @@ const company = [
 const helpCenter = [
   {
     id: 1,
+    link: "#",
     title: "Why Us",
   },
   {
     id: 2,
+    link: "#",
     title: "FAQs",
   },
   {
     id: 3,
+    link: "#",
     title: "How to Order",
   },
 ];
@@ -49,13 +56,13 @@ const Footer = () => {
               Company
             </h3>
             <ul className="text-white font-light space-y-3">
-              {company.map((item) => {
-                return (
-                  <li key={item.id}>
-                    <a className="mb-2">{item.title}</a>
-                  </li>
-                );
-              })}
+              {company.map((item) => (
+                <li key={item.id}>
+                  <a href={item.link} className="mb-2">
+                    {item.title}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
           <div className="flex flex-col gap-4 w-[230px]">
@@ -64,13 +71,11 @@ const Footer = () => {
             </h3>
             <div className="flex gap-4 items-center">
               <ul className="text-white font-light space-y-3">
-                {helpCenter.map((item) => {
-                  return (
-                    <li key={item.id}>
-                      <a className="mb-2">{item.title}</a>
-                    </li>
-                  );
-                })}
+                {helpCenter.map((item) => (
+                  <li key={item.id}>
+                    <a href={item.link} className="mb-2">{item.title}</a>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
